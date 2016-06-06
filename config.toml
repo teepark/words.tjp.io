@@ -1,0 +1,6 @@
+baseurl = "https://words.tjp.io/"
+languageCode = "en-us"
+title = "Words from Travis Parker"
+
+[Params]
+  Author = "Travis Parker"
