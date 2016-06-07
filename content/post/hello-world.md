@@ -9,6 +9,8 @@ Hi!
 
 I'm Travis Parker, a 32 year old developer from Marin County, California.
 
+<!--more-->
+
 I work on [Pixinote](https://pixinote.com/). It's a simple app for sending lovely *physical* notes to the people you care about. You should totally try it!
 
 I have lots of thoughts. They usually [stay in my head](http://jvns.ca/blog/2016/04/30/building-expertise-at-work/) though. Here, I'll try and constrain them to software development and the community of developers.
