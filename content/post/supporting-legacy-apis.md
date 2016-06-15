@@ -15,7 +15,6 @@ I introduced progressive migration to support old versions of mobile apps. Like 
 var oldVersionProxy = httputil.NewSingleHostReverseProxy("https://old.api.com")
 
 func NewVersionRouter() http.Handler {
-	# a router for known routes
 	router := new(httprouter.Router)
 
 	router.GET("/api/foo", FooHandler)
