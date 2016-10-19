@@ -8,7 +8,6 @@ pygmentsUseClasses = true
 
 [Params]
   logo = "img/profile.png"
-  bigimg = "/img/bigimg.jpg"
   subtitle = "by Travis Parker"
 
 [Author]
