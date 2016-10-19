@@ -1,7 +1,20 @@
+title = "Words"
 baseurl = "https://words.tjp.io/"
 languageCode = "en-us"
-title = "Words from Travis Parker"
-theme = "hugo-redlounge"
+
+theme = "beautifulhugo"
+PygmentsCodeFences = true
+pygmentsUseClasses = true
 
 [Params]
-  Author = "Travis Parker"
+  logo = "img/profile.png"
+  bigimg = "/img/bigimg.jpg"
+  subtitle = "by Travis Parker"
+
+[Author]
+  name = "Travis Parker"
+  email = "travis.parker@gmail.com"
+  facebook = "teepark84"
+  github = "teepark"
+  twitter = "teepark"
+  linkedin = "in/travis-parker-252b00"

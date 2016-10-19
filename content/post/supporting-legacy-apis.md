@@ -2,6 +2,7 @@
 date = "2016-06-14T19:46:32-07:00"
 draft = false
 title = "Supporting Legacy APIs"
+subtitle = "for fun and profit"
 
 +++
 
@@ -9,26 +10,30 @@ I've started learning Elixir, so I've been on the prowl for great blog content t
 
 I love it so much that I've done this myself pretty recently in Go (with a twist)! Maybe this idea will be useful for others.
 
+<!--more-->
+
 I introduced progressive migration to support old versions of mobile apps. Like most developers, when releasing a new version of an app I tend to improve the server API at the same time. But for mobile apps, the existing pesky old versions can't be ignored. So I reverse proxy.
 
-```
-var oldVersionProxy = httputil.NewSingleHostReverseProxy("https://old.api.com")
+```go
+var oldVersionProxy = httputil.NewSingleHostReverseProxy(
+    "https://old.api.com",
+)
 
 func NewVersionRouter() http.Handler {
-	router := new(httprouter.Router)
+    router := new(httprouter.Router)
 
-	router.GET("/api/foo", FooHandler)
-	router.POST("/api/bar", BarHandler)
+    router.GET("/api/foo", FooHandler)
+    router.POST("/api/bar", BarHandler)
 
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		handle, params, _ := router.Lookup(r.Method, r.URL.Path)
-		if handle != nil {
-			handle(w, r, params)
-			return
-		}
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        handle, params, _ := router.Lookup(r.Method, r.URL.Path)
+        if handle != nil {
+            handle(w, r, params)
+            return
+        }
 
-		oldVersionProxy.ServeHTTP(w, r)
-	})
+        oldVersionProxy.ServeHTTP(w, r)
+    })
 }
 ```
 
