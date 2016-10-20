@@ -8,7 +8,7 @@ pygmentsUseClasses = true
 
 [Params]
   logo = "img/profile.png"
-  subtitle = "by Travis Parker"
+  subtitle = "from Travis Parker"
 
 [Author]
   name = "Travis Parker"
